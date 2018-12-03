@@ -1,10 +1,19 @@
-﻿#Install-WindowsFeature -name Web-Server -IncludeManagementTools
+﻿Set-ExecutionPolicy Bypass -Scope Process -Force 
+#iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+#Install-WindowsFeature -name Web-Server -IncludeManagementTools
+choco install git.install
+choco install visualstudio2017-workload-webbuildtools
+choco install visualstudio2017buildtools
+choco install nuget.commandline
+choco install nuget.commandline
 Import-Module WebAdministration
 
 $IISSiteName = "BookStore"
 $SiteFolderPath = "C:\BookStore"
 $AppPoolName = "BookStoreAppPool"          
-$HostHeader = "www.BookStore.com" 
+$HostHeader = "www.BookStore.com"
+$GitHubUrl = "https://github.com/LenaShy/MyBookStore.git" 
+ 
 
 if(!(Test-Path("$SiteFolderPath"))) {
     New-Item $SiteFolderPath -type Directory
