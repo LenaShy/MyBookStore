@@ -8,6 +8,9 @@ namespace MyBookStore.Models
 {
     public class BookContext : DbContext
     {
+	public BookContext() : base("DB")
+        {
+        }
         public DbSet<Book> Books { get; set; }
         public DbSet<Purchase> Purchases { get; set; }
     }
