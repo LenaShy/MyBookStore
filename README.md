@@ -13,7 +13,7 @@ To run this box you need:
 2. Add to this folder [Vagrantfile](https://github.com/LenaShy/MyBookStore/blob/master/Vagrantfile) and [iis_setup.ps1](https://github.com/LenaShy/MyBookStore/blob/master/iis_setup.ps1) script 
 3. With next command add box localy
 I think you should use an
-`<addr>` element here instead
+```addr``` element here instead
 # Structure 
 diagram
 # Output
