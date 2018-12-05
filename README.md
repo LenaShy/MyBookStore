@@ -1,6 +1,6 @@
 # About Project
 This project helps to deploy ASP.NET application to IIS server on virtual machine.
-# Purpose/Objective/Goals
+# Goals
 The goal of this project is to automate creating VirtualBox and deploying ASP.NET application using Vagrant tool. It takes less time just set your repository url and run one command to check if application will work on remote enviroment.    
 # Executive Summary
 Vgrant creates and start virtual machine using setting in [Vagrantfile](https://github.com/LenaShy/MyBookStore/blob/master/Vagrantfile).
