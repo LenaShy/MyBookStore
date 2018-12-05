@@ -1,11 +1,11 @@
-﻿Set-ExecutionPolicy Bypass -Scope Process -Force 
+Set-ExecutionPolicy Bypass -Scope Process -Force 
 Import-Module WebAdministration
 $IISSiteName = "BookStore"
 $RepoFolderPath = "C:\BookStoreRepo" 
 $SiteFolderPath = "C:\BookStore"
 $AppPoolName = "BookStoreAppPool" 
 $HostHeader = "www.BookStore.com"
-$GitHubUrl = "https://github.com/LenaShy/MyBookStore.git" 
+$GitHubUrl = "https://github.com/LenaShy/MyBookStore" 
 
 
 
@@ -18,7 +18,7 @@ if(!(Test-Path("$RepoFolderPath")))
 } 
 else # if folder exist
 {
-    Set-Location -Path $RepoFolderPath # go to location where repo is sited
+    Set-Location -Path "$RepoFolderPath\MyBookStore" # go to location where repo is sited
     git pull
 }
 
@@ -43,7 +43,7 @@ if(!(Get-WebBinding -Name $IISSiteName))
     New-WebBinding -Name $IISSiteName -Protocol http -Port 80 -IPAddress "*" -HostHeader $HostHeader
 }
 
-Get-Website | where {$_.State -eq 'Start'} | Stop-Website -Name $_.Name
+Stop-WebSite -Name "Default Web Site"
 
 if(Get-Website -Name $IISSiteName | where {$_.State -eq 'Stopped'})
 {
