@@ -27,7 +27,8 @@ VirtualBox with new machine will be oppened.
 6. Login to `vagrant` account with password `vagrant`.
 7. IIS server with your app is already running. To check it browse `http://localhost/`.
 # Structure 
-diagram
+![GitHub Logo](/images/logo.png)
+Format: ![Alt Text](url)
 # Output
 In output you should see 
 ```
