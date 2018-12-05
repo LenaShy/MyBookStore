@@ -18,7 +18,7 @@ Preinstalled on base vagrant box:
 1. Get box image
 2. With next command add box localy
 ```vagrant box add windowsserver WindowsServer.box```  
-Note: you should be in the same folder where `WindowsServer.box` is placed or specify full path.
+*Note*: you should be in the same folder where `WindowsServer.box` is placed or specify full path.
 3. Create folder for your machine
 4. Add to this folder [Vagrantfile](https://github.com/LenaShy/MyBookStore/blob/master/Vagrantfile) and [iis_setup.ps1](https://github.com/LenaShy/MyBookStore/blob/master/iis_setup.ps1) script 
 5. Into created folder run
