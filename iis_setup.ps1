@@ -9,16 +9,17 @@ $GitHubUrl = "https://github.com/LenaShy/MyBookStore.git"
 
 
 
-if(!(Test-Path("$RepoFolderPath"))) { 
-New-Item $RepoFolderPath -type Directory # creating folder with repo
-Set-Location -Path $RepoFolderPath # go to location where repo is sited
-git clone $GitHubUrl
+if(!(Test-Path("$RepoFolderPath"))) 
+{ 
+    New-Item $RepoFolderPath -type Directory # creating folder with repo
+    Set-Location -Path $RepoFolderPath # go to location where repo is sited
+    git clone $GitHubUrl
 
 } 
 else # if folder exist
 {
-Set-Location -Path $RepoFolderPath # go to location where repo is sited
-git pull
+    Set-Location -Path $RepoFolderPath # go to location where repo is sited
+    git pull
 }
 
 Set-Location -Path "$RepoFolderPath\MyBookStore" # go to inner folder in cloned repo
@@ -27,18 +28,24 @@ msbuild # build
 
 $SiteFolderPath = "$RepoFolderPath\MyBookStore\MyBookStore"
 
-if(!(Test-Path ("IIS:\AppPools\$AppPoolName"))) { # if not AppPool -> create it
-New-WebAppPool -Name $AppPoolName
+if(!(Test-Path ("IIS:\AppPools\$AppPoolName"))) # if not AppPool -> create it
+{ 
+    New-WebAppPool -Name $AppPoolName
 }
 
-If((!(Test-Path "IIS:\Sites\$IISSiteName"))){ # if not site -> create it
-New-Website -Name $IISSiteName -physicalPath $SiteFolderPath -ApplicationPool $AppPoolName 
+If((!(Test-Path "IIS:\Sites\$IISSiteName"))) # if not site -> create it
+{ 
+    New-Website -Name $IISSiteName -physicalPath $SiteFolderPath -ApplicationPool $AppPoolName 
 }
 
-if(!(Get-WebBinding -Name $IISSiteName)) {
-New-WebBinding -Name $IISSiteName -Protocol http -Port 80 -IPAddress "*" -HostHeader $HostHeader
-}
-if(Get-Website | where {$_.State -eq 'Stopped'})
+if(!(Get-WebBinding -Name $IISSiteName)) 
 {
-Start-WebSite -Name $IISSiteName
+    New-WebBinding -Name $IISSiteName -Protocol http -Port 80 -IPAddress "*" -HostHeader $HostHeader
+}
+
+Get-Website | where {$_.State -eq 'Start'} | Stop-Website -Name $_.Name
+
+if(Get-Website -Name $IISSiteName | where {$_.State -eq 'Stopped'})
+{
+    Start-WebSite -Name $IISSiteName
 }
