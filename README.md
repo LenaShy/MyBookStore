@@ -28,7 +28,6 @@ VirtualBox with new machine will be oppened.
 7. IIS server with your app is already running. To check it browse `http://localhost/`.
 # Structure 
 ![GitHub Logo](Diagram.jpg)
-Format: ![Alt Text](url)
 # Output
 In output you should see 
 ```
