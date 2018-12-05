@@ -22,7 +22,7 @@ Preinstalled on base vagrant box:
 3. Create folder for your machine.
 4. Add to this folder [Vagrantfile](https://github.com/LenaShy/MyBookStore/blob/master/Vagrantfile) and [iis_setup.ps1](https://github.com/LenaShy/MyBookStore/blob/master/iis_setup.ps1) script.
 5. In created folder run
-`vagrant up`  
+`vagrant up`.  
 VirtualBox with new machine will be oppened.
 6. Login to `vagrant` account with password `vagrant`.
 7. IIS server with your app is already running. To check it browse `http://localhost/`.
