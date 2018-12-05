@@ -4,7 +4,7 @@ This project helps to deploy ASP.NET application to IIS server on virtual machin
 The goal of this project is to automate creating VirtualBox and deploying ASP.NET application using Vagrant tool. It takes less time just set your repository url and run one command to check if application will work on remote enviroment.    
 # Executive Summary
 Vgrant creates and start virtual machine using setting in [Vagrantfile](https://github.com/LenaShy/MyBookStore/blob/master/Vagrantfile).
- [iis_setup.ps1](https://github.com/LenaShy/MyBookStore/blob/master/iis_setup.ps1) using for automate deploying ASP.NET application on IIS. 
+ [This script](https://github.com/LenaShy/MyBookStore/blob/master/iis_setup.ps1) using for automate deploying ASP.NET application on IIS. 
 # Toolset
 To run this box you need:
 * VirtualBox 5.2.20
