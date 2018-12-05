@@ -9,6 +9,7 @@ Vgrant creates and start virtual machine using settings in [Vagrantfile](https:/
 To run this box you need:
 * VirtualBox 5.2.20
 * Vagrant 2.2.0
+
 Preinstalled on base vagrant box:
 * Visual Studio build tools
 * SQL Server Express 
