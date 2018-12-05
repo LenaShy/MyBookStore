@@ -43,7 +43,10 @@ if(!(Get-WebBinding -Name $IISSiteName))
     New-WebBinding -Name $IISSiteName -Protocol http -Port 80 -IPAddress "*" -HostHeader $HostHeader
 }
 
-Stop-WebSite -Name "Default Web Site"
+if(Get-Website -Name "Default Web Site" | where {$_.State -eq 'Started'})
+{
+    Stop-WebSite -Name "Default Web Site"
+}
 
 if(Get-Website -Name $IISSiteName | where {$_.State -eq 'Stopped'})
 {
