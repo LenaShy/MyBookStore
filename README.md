@@ -1,5 +1,6 @@
 # About Project
 This project helps deploy ASP.NET application to IIS server on virtual machine.
+[![Build Status](https://eshynkarenko.visualstudio.com/BookStore/_apis/build/status/BookStore-ASP.NET-CI%20(1)?branchName=master)](https://eshynkarenko.visualstudio.com/BookStore/_build/latest?definitionId=2?branchName=master)
 # Goals
 The goal of this project is to automate creating VirtualBox and deploying ASP.NET application using Vagrant tool. It takes less time just set your repository url and run one command to check if application will work on remote enviroment.    
 # Executive Summary
@@ -37,5 +38,4 @@ Bringing machine 'default' up with 'virtualbox' provider...
     default: Running: iis_setup.ps1 as c:\tmp\vagrant-shell.ps1
  ```
 After will be results of PowerShell script executing. And VirtualBox machine will be appeared.
-#  test string
     
