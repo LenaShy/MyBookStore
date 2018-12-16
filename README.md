@@ -37,5 +37,5 @@ Bringing machine 'default' up with 'virtualbox' provider...
     default: Running: iis_setup.ps1 as c:\tmp\vagrant-shell.ps1
  ```
 After will be results of PowerShell script executing. And VirtualBox machine will be appeared.
-    
+#  test string
     
