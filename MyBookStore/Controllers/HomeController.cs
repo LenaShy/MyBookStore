@@ -29,5 +29,10 @@ namespace MyBookStore.Controllers
             db.SaveChanges();
             return "Спасибо, " + purchase.Person + ", за покупку!";
         }
+        public ActionResult ToTest()
+        {
+            ViewBag.Message = "Hello world!";
+            return View("ToTest");
+        }
     }
 }
