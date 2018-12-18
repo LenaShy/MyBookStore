@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Web.Mvc;
 using MyBookStore.Models;
 
-using BookStore.Util;
 
 namespace MyBookStore.Controllers
 {
@@ -29,17 +28,6 @@ namespace MyBookStore.Controllers
             db.Purchases.Add(purchase);
             db.SaveChanges();
             return "Спасибо, " + purchase.Person + ", за покупку!";
-        }
-
-        public ActionResult GetHtml()
-        {
-            return new HtmlResult("<h2>Привет мир!</h2>");
-        }
-
-        public ActionResult GetImage()
-        {
-            string path = "../Images/visualstudio.jpg";
-            return new ImageResult(path);
         }
     }
 }
