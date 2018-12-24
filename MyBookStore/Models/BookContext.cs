@@ -10,7 +10,6 @@ namespace MyBookStore.Models
     {
 	    public BookContext() : base("DB")
         {
-
         }
         public DbSet<Book> Books { get; set; }
         public DbSet<Purchase> Purchases { get; set; }
