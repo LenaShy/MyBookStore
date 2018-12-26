@@ -8,7 +8,7 @@ namespace MyBookStore.Models
 {
     public class BookContext : DbContext
     {
-	    public BookContext() : base("DB")
+	    public BookContext() : base("name=BookContext")
         {
         }
         public DbSet<Book> Books { get; set; }
