@@ -1,0 +1,103 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "_comment": "comment text goes here...",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "sqlserverAdminLogin": {
+            "minLength": 1,
+            "type": "String"
+        },
+        "sqlserverAdminLoginPassword": {
+            "type": "SecureString"
+        },
+        "sqldbName": {
+            "minLength": 1,
+            "type": "String"
+        },
+        "sqldbCollation": {
+            "defaultValue": "SQL_Latin1_General_CP1_CI_AS",
+            "minLength": 1,
+            "type": "String"
+        },
+        "sqldbEdition": {
+            "defaultValue": "Basic",
+            "allowedValues": [
+                "Basic",
+                "Standard",
+                "Premium"
+            ],
+            "type": "String"
+        },
+        "sqldbRequestedServiceObjectiveName": {
+            "defaultValue": "Basic",
+            "allowedValues": [
+                "Basic",
+                "S0",
+                "S1",
+                "S2",
+                "P1",
+                "P2",
+                "P3"
+            ],
+            "type": "String",
+            "metadata": {
+                "description": "Describes the performance level for Edition"
+            }
+        }
+    },
+    "variables": {
+        "sqlserverName": "[concat('sqlserver', uniqueString(resourceGroup().id))]",
+        "fullyQualifiedsqldbName": "[concat(variables('sqlserverName'), '/', parameters('sqldbName'))]"
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Sql/servers",
+            "name": "[variables('sqlserverName')]",
+            "apiVersion": "2014-04-01-preview",
+            "location": "[resourceGroup().location]",
+            "tags": {
+                "displayName": "sqlserver"
+            },
+            "properties": {
+                "administratorLogin": "[parameters('sqlserverAdminLogin')]",
+                "administratorLoginPassword": "[parameters('sqlserverAdminLoginPassword')]"
+            },
+            "resources": [
+                {
+                    "type": "firewallrules",
+                    "name": "AllowAllWindowsAzureIps",
+                    "apiVersion": "2014-04-01-preview",
+                    "location": "[resourceGroup().location]",
+                    "properties": {
+                        "startIpAddress": "0.0.0.0",
+                        "endIpAddress": "0.0.0.0"
+                    },
+                    "dependsOn": [
+                        "[concat('Microsoft.Sql/servers/', variables('sqlserverName'))]"
+                    ]
+                }
+            ],
+            "dependsOn": []
+        },
+        {
+            "type": "Microsoft.Sql/servers/databases",
+            "name": "[variables('fullyQualifiedsqldbName')]",
+            "apiVersion": "2014-04-01-preview",
+            "location": "[resourceGroup().location]",
+            "tags": {
+                "displayName": "sqldb"
+            },
+            "properties": {
+                "collation": "[parameters('sqldbCollation')]",
+                "edition": "[parameters('sqldbEdition')]",
+                "maxSizeBytes": "1073741824",
+                "requestedServiceObjectiveName": "[parameters('sqldbRequestedServiceObjectiveName')]"
+            },
+            "dependsOn": [
+                "[resourceId('Microsoft.Sql/servers', variables('sqlserverName'))]"
+            ]
+        }
+    ],
+    "functions": [  ],
+    "outputs": {  }
+}
