@@ -1,0 +1,33 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "envPrefixName": {
+      "value": null
+    },
+    "username": {
+      "value": null
+    },
+    "password": {
+      "value": null
+    },
+    "sqlAuthenticationLogin": {
+      "value": null
+    },
+    "sqlAuthenticationPassword": {
+      "value": null
+    },
+    "webSrvVMSize": {
+      "value": "Standard_D2_v2"
+    },
+    "numberOfWebSrvs": {
+      "value": 6
+    },
+    "sqlVMSize": {
+      "value": "Standard_D2_v2"
+    },
+    "storageAccountType": {
+      "value": "Standard_LRS"
+    }
+  }
+}
