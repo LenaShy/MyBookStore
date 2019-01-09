@@ -3,28 +3,28 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "envPrefixName": {
-      "value": null
+      "value": "demo3"
     },
     "username": {
-      "value": null
+      "value": "demoadmin"
     },
     "password": {
-      "value": null
+      "value": "P2ssw0rd@123"
     },
     "sqlAuthenticationLogin": {
-      "value": null
+      "value": "sqladmin"
     },
     "sqlAuthenticationPassword": {
-      "value": null
+      "value": "P2ssw0rd@123"
     },
     "webSrvVMSize": {
-      "value": "Standard_D2_v2"
+      "value": "Standard_DS1"
     },
     "numberOfWebSrvs": {
-      "value": 6
+      "value": 2
     },
     "sqlVMSize": {
-      "value": "Standard_D2_v2"
+      "value": "Standard_DS2"
     },
     "storageAccountType": {
       "value": "Standard_LRS"
