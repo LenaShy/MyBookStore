@@ -11,12 +11,6 @@
     "password": {
       "value": "P2ssw0rd@123"
     },
-    "sqlAuthenticationLogin": {
-      "value": "sqladmin"
-    },
-    "sqlAuthenticationPassword": {
-      "value": "P2ssw0rd@123"
-    },
     "webSrvVMSize": {
       "value": "Standard_DS1"
     },
