@@ -12,10 +12,10 @@
       "value": "P2ssw0rd@123"
     },
     "sqlAuthenticationLogin": {
-      "value": null
+      "value": "demoadmin"
     },
     "sqlAuthenticationPassword": {
-      "value": null
+      "value": "P2ssw0rd@123"
     },
     "webSrvVMSize": {
       "value": "Standard_DS1"
