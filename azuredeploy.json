@@ -23,6 +23,12 @@
                 "description": "SQL IaaS VM local administrator password"
             }
         },
+        "sqlAuthenticationLogin": {
+            "type": "string"
+        },
+        "sqlAuthenticationPassword": {
+            "type": "securestring"
+        },
         "webSrvVMSize": {
             "type": "string",
             "allowedValues": [
