@@ -3,16 +3,16 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "envPrefixName": {
-      "value": "demo3"
+      "value": "demo"
     },
     "username": {
-      "value": "demoadmin"
+      "value": "demo"
     },
     "password": {
       "value": "P2ssw0rd@123"
     },
     "sqlAuthenticationLogin": {
-      "value": "demoadmin"
+      "value": "demo"
     },
     "sqlAuthenticationPassword": {
       "value": "P2ssw0rd@123"
