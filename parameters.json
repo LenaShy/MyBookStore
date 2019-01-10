@@ -11,6 +11,12 @@
     "password": {
       "value": "P2ssw0rd@123"
     },
+    "sqlAuthenticationLogin": {
+      "value": null
+    },
+    "sqlAuthenticationPassword": {
+      "value": null
+    },
     "webSrvVMSize": {
       "value": "Standard_DS1"
     },
