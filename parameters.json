@@ -16,18 +16,6 @@
     },
     "sqlAuthenticationPassword": {
       "value": "P2ssw0rd@123"
-    },
-    "webSrvVMSize": {
-      "value": "Standard_DS1"
-    },
-    "numberOfWebSrvs": {
-      "value": 2
-    },
-    "sqlVMSize": {
-      "value": "Standard_DS2"
-    },
-    "storageAccountType": {
-      "value": "Standard_LRS"
     }
   }
 }
